@@ -1,0 +1,121 @@
+@import "_colors.scss";
+@import "_typography.scss";
+@import "_reset.scss";
+
+@mixin hover-transition {
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+body {
+  background-color: $off-white;
+}
+.wrapper {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-rows: 100px 2fr 1fr;
+  height: 100vh;
+}
+
+.nav-area-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+
+    li {
+      @include hover-transition;
+      color: $dark-grayish-blue;
+      &:hover {
+        color: $soft-red;
+        cursor: pointer;
+        @include hover-transition;
+      }
+    }
+  }
+}
+
+.featured-new-details {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+.featured-new-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.featured-new-header {
+  font-family: "Inter Extrabold";
+  font-size: 3rem;
+  flex-basis: 40%;
+  line-height: 110%;
+}
+.top-news {
+  background-color: $very-dark-grayish-blue;
+  color: $grayish-blue;
+  padding: 30px 15px;
+
+  h1 {
+    color: $soft-orange;
+    font-family: "Inter Bold";
+    font-size: 2rem;
+  }
+}
+
+.top-news-item {
+  padding: 10px 0;
+  border-bottom: 1px solid $dark-grayish-blue;
+  &:last-child {
+    border-bottom: none;
+  }
+  h3 {
+    font-family: "Inter Bold";
+    cursor: pointer;
+    &:hover {
+      color: $soft-orange;
+    }
+  }
+}
+
+.top-3-row {
+  display: flex;
+  gap: 50px;
+}
+
+.top-3-item {
+  h2 {
+    color: $grayish-blue;
+    font-size: 2rem;
+    font-family: "Inter Bold";
+  }
+  h3 {
+    font-family: "Inter Bold";
+    color: $very-dark-grayish-blue;
+
+    &:hover {
+      color: $soft-red;
+      cursor: pointer;
+    }
+  }
+}
+
+.read-more-button {
+  border: none;
+  padding: 10px 20px;
+  background-color: $soft-red;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $very-dark-grayish-blue;
+    color: white;
+    @include hover-transition;
+  }
+}
